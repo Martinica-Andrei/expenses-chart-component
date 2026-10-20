@@ -26,6 +26,11 @@ ol {
     padding: 0;
 }
 
-.error{
-    color:red;
+.error {
+    color: red;
+    display: none;
+}
+
+.load-message {
+    display: none;
 }

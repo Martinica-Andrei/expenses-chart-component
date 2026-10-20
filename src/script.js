@@ -2,6 +2,7 @@ const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
 const loadErrorEl = $("#load-error");
+const loadMessageEl = $("#load-message");
 
 const myBalanceValueEl = $("#my-balance-value");
 const totalThisMonthValueEl = $("#total-this-month-value");
@@ -15,6 +16,7 @@ async function getAndDisplayDataAsync(){
 }
 
 async function getDataAsync() {
+    loadMessageEl.style.display = "block";
     try {
         const response = await fetch("data.json");
         if (response.ok) {
@@ -30,12 +32,14 @@ async function getDataAsync() {
 
 function displayData(data) {
     if (data != null) {
-        loadErrorEl.style.display = "none";
+        loadErrorEl.style.display = "";
         myBalanceValueEl.textContent = "$" + data.balance;
         totalThisMonthValueEl.textContent = "$" + data.totalThisMonth;
         percentageIncreaseFromLastMonthValueEl.textContent = data.fromLastMonthIncrease;
     }
     else {
-        loadErrorEl.style.display = "";
+        loadErrorEl.style.display = "block";
     }
+
+    loadMessageEl.style.display = "";
 }
