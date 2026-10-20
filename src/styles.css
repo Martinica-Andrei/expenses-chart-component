@@ -12,7 +12,7 @@
     --primary-2: hsl(186, 34%, 65%);
     --neutral-1: hsl(25, 47%, 15%);
     --neutral-2: hsl(28, 10%, 53%);
-    --neutral-3: hsl(26, 66%, 93%);
+    --background: hsl(26, 66%, 93%);
 }
 
 body {
@@ -20,6 +20,7 @@ body {
     padding: 0;
     font-size: 1.125rem;
     font-family: "DM Sans", sans-serif;
+    background-color: var(--background);
 }
 
 h1,
