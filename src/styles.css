@@ -28,9 +28,4 @@ ol {
 
 .error {
     color: red;
-    display: none;
-}
-
-.load-message {
-    display: none;
 }
