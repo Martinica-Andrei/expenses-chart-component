@@ -33,7 +33,7 @@ async function getAndDisplayDataAsync() {
 async function getDataAsync() {
     try {
         const response = await fetch("data.json");
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise(resolve => setTimeout(resolve, 500));
         if (response.ok) {
             return response.json();
         }
