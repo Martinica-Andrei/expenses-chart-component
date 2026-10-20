@@ -25,3 +25,7 @@ ol {
     margin: 0;
     padding: 0;
 }
+
+.error{
+    color:red;
+}
