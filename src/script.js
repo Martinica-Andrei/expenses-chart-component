@@ -14,8 +14,6 @@ const STATE_LOADING = 0;
 const STATE_LOADED_SUCCESS = 1;
 const STATE_LOADED_FAILURE = 2;
 
-const LOADING_TIME_MS = 500;
-
 loadDataBtnEl.addEventListener("click", getAndDisplayDataAsync);
 
 await getAndDisplayDataAsync();
@@ -35,7 +33,6 @@ async function getAndDisplayDataAsync() {
 async function getDataAsync() {
     try {
         const response = await fetch("data.json");
-        await new Promise(resolve => setTimeout(resolve, LOADING_TIME_MS));
         if (response.ok) {
             return response.json();
         }
