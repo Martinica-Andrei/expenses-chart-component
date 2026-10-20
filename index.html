@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Expenses chart component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="src/styles.css">
+  <script src="src/script.js" defer type="module"></script>
 </head>
+
 <body>
+  <header aria-labelledby="my-balance">
+    <h1 id="my-balance">My balance <span id="my-balance-value">$921.48</span></h1>
+  </header>
 
-  My balance
-  $921.48
+  <section aria-labelledby="spending-last-7-days">
+    <h2 id="spending-last-7-days">Spending - Last 7 days</h2>
+    <ul>
+      <li>mon</li>
+      <li>tue</li>
+      <li>wed</li>
+      <li>thu</li>
+      <li>fri</li>
+      <li>sat</li>
+      <li>sun</li>
+    </ul>
+  </section>
 
-  Spending - Last 7 days
+  <section aria-labelledby="total-this-month">
+    <h2 id="total-this-month">Total this month <span id="total-this-month-value">$478.33</span>
+    </h2>
+  </section>
 
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
-
-  Total this month
-  $478.33
-
-  +2.4%
-  from last month
-  
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
+  <section aria-labelledby="percentage-increase-from-last-month">
+    <h2 id="percentage-increase-from-last-month"><span id="percentage-increase-from-last-month-value">+2.4%</span> from
+      last month</h2>
+  </section>
 </body>
+
 </html>
