@@ -28,30 +28,37 @@
   <div id="content">
     <header aria-labelledby="my-balance">
       <h1 id="my-balance">My balance <span id="my-balance-value"></span></h1>
+      <img src="images/logo.svg" alt="" width="72" height="59">
     </header>
 
-    <section aria-labelledby="spending-last-7-days">
-      <h2 id="spending-last-7-days">Spending - Last 7 days</h2>
-      <ul>
-        <li>mon</li>
-        <li>tue</li>
-        <li>wed</li>
-        <li>thu</li>
-        <li>fri</li>
-        <li>sat</li>
-        <li>sun</li>
-      </ul>
-    </section>
+    <div class="spending-card">
+      <section aria-labelledby="spending-last-7-days">
+        <h2 id="spending-last-7-days">Spending - Last 7 days</h2>
+        <ul>
+          <li>mon</li>
+          <li>tue</li>
+          <li>wed</li>
+          <li>thu</li>
+          <li>fri</li>
+          <li>sat</li>
+          <li>sun</li>
+        </ul>
+      </section>
 
-    <section aria-labelledby="total-this-month">
-      <h2 id="total-this-month">Total this month <span id="total-this-month-value"></span>
-      </h2>
-    </section>
+      <div class="divider" aria-hidden="true"></div>
 
-    <section aria-labelledby="percentage-increase-from-last-month">
-      <h2 id="percentage-increase-from-last-month"><span id="percentage-increase-from-last-month-value"></span> from
-        last month</h2>
-    </section>
+      <div class="spending-total">
+        <section aria-labelledby="total-this-month">
+          <h2 id="total-this-month">Total this month <span id="total-this-month-value"></span>
+          </h2>
+        </section>
+
+        <section aria-labelledby="percentage-increase-from-last-month">
+          <h2 id="percentage-increase-from-last-month"><span id="percentage-increase-from-last-month-value"></span> from
+            last month</h2>
+        </section>
+      </div>
+    </div>
   </div>
 </body>
 

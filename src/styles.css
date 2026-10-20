@@ -12,15 +12,15 @@
     --primary-2: hsl(186, 34%, 65%);
     --neutral-1: hsl(25, 47%, 15%);
     --neutral-2: hsl(28, 10%, 53%);
-    --background: hsl(26, 66%, 93%);
+    --neutral-3: hsl(26, 66%, 93%);
 }
 
 body {
     margin: 0;
-    padding: 0;
+    padding: 8px;
     font-size: 1.125rem;
     font-family: "DM Sans", sans-serif;
-    background-color: var(--background);
+    background-color: var(--neutral-3);
 }
 
 h1,
@@ -37,6 +37,91 @@ ol {
     padding: 0;
 }
 
+ul, ol{
+    list-style: none;
+}
+
+h2{
+    font-size: 1.3rem;
+}
+
 .error {
     color: red;
+}
+
+.divider{
+    border:1px solid var(--neutral-3);
+    margin: 24px 0;
+}
+
+/* content
+-------------------------------------------------------------------------------------- */
+
+#content{
+    max-width: 500px;
+    margin:auto;
+}
+
+/* header
+-------------------------------------------------------------------------------------- */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding:16px 24px;
+    background-color: var(--primary-1);
+    color: var(--neutral-3);
+    border-radius: 8px;
+    box-shadow: 0px 0px 3px 2px var(--neutral-3);
+}
+
+h1{
+    font-size: 1.125rem;
+    display:flex;
+    flex-direction: column;
+    font-weight: 400;
+    gap:4px;
+}
+
+h1 span{
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* spending-card
+-------------------------------------------------------------------------------------- */
+
+.spending-card{
+    background-color: white;
+    margin-top: 16px;
+    border-radius: 16px;
+    padding:24px;
+    color: var(--neutral-1)
+}
+
+.spending-total{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    color: var(--neutral-2);
+}
+
+.spending-total h2{
+    display:flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+}
+
+.spending-total span{
+    font-weight: 700;
+    color: var(--neutral-1)
+}
+
+#total-this-month-value{
+    font-size: 2.2rem;
+}
+
+#percentage-increase-from-last-month{
+    text-align: right;
 }
