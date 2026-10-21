@@ -59,8 +59,8 @@ function displayData(data) {
         const spendingEl = $(`.spending.${day}`);
         spendingEl.textContent = "$" + amount;
 
-        barEl.addEventListener("mouseenter", () => spendingEl.style.visibility = "visible");
-        barEl.addEventListener("mouseleave", () => spendingEl.style.visibility = "");
+        barEl.addEventListener("mouseenter", () => spendingEl.style.opacity = "1");
+        barEl.addEventListener("mouseleave", () => spendingEl.style.opacity = "0");
     });
 
     highlightCurrentDay();
