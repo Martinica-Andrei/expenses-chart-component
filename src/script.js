@@ -14,7 +14,7 @@ const STATE_LOADING = 0;
 const STATE_LOADED_SUCCESS = 1;
 const STATE_LOADED_FAILURE = 2;
 
-const MAX_BAR_SIZE_PX = 100;
+const MAX_BAR_SIZE_PX = 200;
 
 loadDataBtnEl.addEventListener("click", getAndDisplayDataAsync);
 
@@ -53,7 +53,9 @@ function displayData(data) {
     const barSizes = getBarSizesNormalized(data.spending);
 
     barSizes.forEach(({day, amount, sizeNormalized}) => {
-        $(`.bar.${day}`).style.height = sizeNormalized * MAX_BAR_SIZE_PX + "px";
+        const barEl = $(`.bar.${day}`);
+        barEl.style.height = sizeNormalized * MAX_BAR_SIZE_PX + "px";
+        barEl.ariaLabel = "$" + amount;
     });
 }
 
