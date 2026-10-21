@@ -142,7 +142,7 @@ h1 span{
     display: grid;
     grid-template-columns: repeat(7, minmax(0, 1fr));
     gap: 10px;
-    margin-top: 32px;
+    margin-top: 16px;
 }
 
 .bar-chart li{
@@ -165,4 +165,16 @@ h1 span{
 
 .bar-chart .bar:hover{
     background-color: var(--primary-2);
+}
+
+.bar-chart .spending{
+    order:-1;
+    position:relative;
+    align-self: center;
+    background-color: var(--neutral-1);
+    color: var(--neutral-3);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    visibility: hidden;
 }

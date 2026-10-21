@@ -56,6 +56,11 @@ function displayData(data) {
         const barEl = $(`.bar.${day}`);
         barEl.style.height = sizeNormalized * MAX_BAR_SIZE_PX + "px";
         barEl.ariaLabel = "$" + amount;
+        const spendingEl = $(`.spending.${day}`);
+        spendingEl.textContent = "$" + amount;
+
+        barEl.addEventListener("mouseenter", () => spendingEl.style.visibility = "visible");
+        barEl.addEventListener("mouseleave", () => spendingEl.style.visibility = "");
     });
 }
 
