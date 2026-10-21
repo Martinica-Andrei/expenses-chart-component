@@ -14,6 +14,8 @@ const STATE_LOADING = 0;
 const STATE_LOADED_SUCCESS = 1;
 const STATE_LOADED_FAILURE = 2;
 
+const MAX_BAR_SIZE_PX = 100;
+
 loadDataBtnEl.addEventListener("click", getAndDisplayDataAsync);
 
 await getAndDisplayDataAsync();
@@ -47,6 +49,17 @@ function displayData(data) {
     myBalanceValueEl.textContent = "$" + data.balance;
     totalThisMonthValueEl.textContent = "$" + data.totalThisMonth;
     percentageIncreaseFromLastMonthValueEl.textContent = data.fromLastMonthIncrease;
+
+    const barSizes = getBarSizesNormalized(data.spending);
+
+    barSizes.forEach(({day, amount, sizeNormalized}) => {
+        $(`.bar.${day}`).style.height = sizeNormalized * MAX_BAR_SIZE_PX + "px";
+    });
+}
+
+function getBarSizesNormalized(spending){
+    const maxValue = spending.reduce((prev, current) => Math.max(prev, current.amount), 0);
+    return spending.map(v => ({day : v.day, amount: v.amount, sizeNormalized: v.amount / maxValue}));
 }
 
 function updateLoadingState(state) {

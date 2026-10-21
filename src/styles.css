@@ -134,3 +134,35 @@ h1 span{
 #percentage-increase-from-last-month{
     text-align: right;
 }
+
+/* bar-chart 
+-------------------------------------------------------------------------------------- */
+
+.bar-chart{
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 32px;
+}
+
+.bar-chart li{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 4px;
+}
+
+.bar-chart .day{
+    order: 1;
+    font-size: 0.9rem;
+    text-align: center;
+    color:var(--neutral-2);
+}
+
+.bar-chart .bar{
+    background-color: var(--primary-1);
+}
+
+.bar-chart .bar:hover{
+    background-color: var(--primary-2);
+}
