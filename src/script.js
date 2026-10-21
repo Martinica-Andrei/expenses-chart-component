@@ -27,7 +27,7 @@ async function getAndDisplayDataAsync() {
         displayData(data);
         updateLoadingState(STATE_LOADED_SUCCESS);
     }
-    else{
+    else {
         updateLoadingState(STATE_LOADED_FAILURE);
     }
 }
@@ -52,9 +52,10 @@ function displayData(data) {
 
     const barSizes = getBarSizesNormalized(data.spending);
 
-    barSizes.forEach(({day, amount, sizeNormalized}) => {
-        const barEl = $(`.bar.${day}`);
+    barSizes.forEach(({ day, amount, sizeNormalized }) => {
+        const barEl = getBarEl(day);
         barEl.style.height = sizeNormalized * MAX_BAR_SIZE_PX + "px";
+        barEl.style.backgroundColor = "";
         barEl.ariaLabel = "$" + amount;
         const spendingEl = $(`.spending.${day}`);
         spendingEl.textContent = "$" + amount;
@@ -62,11 +63,13 @@ function displayData(data) {
         barEl.addEventListener("mouseenter", () => spendingEl.style.visibility = "visible");
         barEl.addEventListener("mouseleave", () => spendingEl.style.visibility = "");
     });
+
+    highlightCurrentDay();
 }
 
-function getBarSizesNormalized(spending){
+function getBarSizesNormalized(spending) {
     const maxValue = spending.reduce((prev, current) => Math.max(prev, current.amount), 0);
-    return spending.map(v => ({day : v.day, amount: v.amount, sizeNormalized: v.amount / maxValue}));
+    return spending.map(v => ({ day: v.day, amount: v.amount, sizeNormalized: v.amount / maxValue }));
 }
 
 function updateLoadingState(state) {
@@ -89,4 +92,16 @@ function updateLoadingState(state) {
         default:
             break;
     }
+}
+
+function highlightCurrentDay() {
+    const days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+    const todayIndex = new Date().getDay();
+    const today = days[todayIndex];
+    const todayBarEl = getBarEl(today);
+    todayBarEl.style.backgroundColor = "var(--primary-2)";
+}
+
+function getBarEl(day) {
+    return $(`.bar.${day}`);
 }

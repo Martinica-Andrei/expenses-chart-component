@@ -164,7 +164,8 @@ h1 span{
 }
 
 .bar-chart .bar:hover{
-    background-color: var(--primary-2);
+    cursor:pointer;
+    box-shadow: 0 0 3px 3px gray;
 }
 
 .bar-chart .spending{
