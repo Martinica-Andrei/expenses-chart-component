@@ -56,7 +56,6 @@ function displayData(data) {
         const barEl = getBarEl(day);
         barEl.style.height = sizeNormalized * MAX_BAR_SIZE_PX + "px";
         barEl.style.backgroundColor = "";
-        barEl.ariaLabel = "$" + amount;
         const spendingEl = $(`.spending.${day}`);
         spendingEl.textContent = "$" + amount;
 
